@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+    <title>Random Sim Generator</title>
+    <link rel="icon" type="image/x-icon" href="/media/favicon.ico">
+</head>
+<body>
+<div id="app">
+    <img :class="gender" class="picture" src="/media/plumbob.png" v-bind:alt="`${firstName} ${lastName}`">
+    <h1>{{firstName}} {{lastName}}</h1>
+    <h3>{{gender}}</h3>
+    <h4>Origin: {{countryOfOrigin}}</h4>
+    <span class="trait">
+        <div class="overlay" v-show="showLoader"><span class="loader"></span></div>
+        <img class="icon" :src="traitImg" :alt="trait">{{trait}}
+    </span>
+
+    <button @click="getSim()">Get Random Sim</button>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
